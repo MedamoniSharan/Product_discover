@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search</title>
+</head>
+<body>
+    <h1>Product Search</h1>
+    
+    <form method="POST">
+        <input type="text" name="query" placeholder="Search products" required>
+        <button type="submit">Search</button>
+    </form>
+    
+    {% if results %}
+        <h2>Results for: {{ query }}</h2>
+        <div>
+            {% for platform, images in results.items() %}
+                <h3>{{ platform.capitalize() }}</h3>
+                <div>
+                    {% for img in images %}
+                        <a href="https://www.amazon.in/s?k={{ query.replace(' ', '+') }}" target="_blank">
+                            <img src="{{ img }}" alt="Product image" width="200">
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</body>
+</html>
