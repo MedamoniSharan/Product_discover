@@ -1,9 +1,4 @@
-pip install requests beautifulsoup4
-
-pip install selenium
-
-pip install webdriver-manager
-
-pip install Flask selenium webdriver-manager
-
-AIzaSyA_MDNVvTkfn_kD7gtrpNsxnXADwK44DbE
+Flask==2.1.1
+selenium==4.9.0
+webdriver-manager==4.10.0
+gunicorn==20.1.0
